@@ -7,12 +7,12 @@ def part1(changes):
     print(frequency)
 
 def part2(changes):
-    frequencies = []
+    frequencies = {}
     current_frequency = 0
     idx = 0
     
     while current_frequency not in frequencies:
-        frequencies.append(current_frequency)
+        frequencies[current_frequency] = None
         change = int(changes[idx % len(changes)])
         current_frequency += change
         idx += 1
