@@ -4,7 +4,7 @@ def part1(changes):
     for change in changes:
         frequency += int(change)
 
-    print(frequency)
+    return frequency
 
 def part2(changes):
     frequencies = {}
@@ -17,15 +17,13 @@ def part2(changes):
         current_frequency += change
         idx += 1
 
-    print(current_frequency)
+    return current_frequency
 
+if __name__ == "__main__":
+    changes = []
 
-changes = []
+    with open("day1changes.txt") as file:
+        changes = file.readlines()
 
-with open("day1changes.txt") as file:
-    changes = file.readlines()
-
-print("Part 1:")
-part1(changes)
-print("Part 2:")
-part2(changes)
+    print("Part 1:" + part1(changes))
+    print("Part 2:" + part2(changes))
